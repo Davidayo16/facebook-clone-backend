@@ -21,7 +21,12 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: ["https://facebook-clone-saxt.onrender.com", "http://localhost:3000"],
+  // You can add more allowed origins to the array above
+};
+
+app.use(cors(corsOptions));
 dotenv.config();
 
 app.use(morgan());
