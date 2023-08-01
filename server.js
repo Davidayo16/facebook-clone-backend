@@ -52,7 +52,7 @@ const PORT = process.env.PORT || 1000;
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", // Replace with your frontend URL
+    origin: process.env.REACT_APP_URL, // Replace with your frontend URL
   },
 });
 
